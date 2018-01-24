@@ -43,8 +43,6 @@ sys.ipo.pwrdncap=2
 # Radio
 persist.radio.sar_sar_sensor=true
 persist.sys.mdlog_dumpback=2
-vendor.rild.libpath=mtk-ril.so
-vendor.rild.libargs=-d /dev/ttyC0
 
 # USB
 persist.vendor.quick.charge=1
