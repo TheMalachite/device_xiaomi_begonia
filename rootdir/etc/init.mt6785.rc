@@ -1105,6 +1105,8 @@ on boot
     wait /sys/class/power_supply/battery/temp
     start mi_thermald
 
+    setprop init.svc.console stopped
+
 # GPS
 service mnld /vendor/bin/mnld
     class main
