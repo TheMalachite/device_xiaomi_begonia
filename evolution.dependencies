@@ -1,0 +1,50 @@
+[
+ {
+   "repository"  : "PixelExperience-Devices/kernel_xiaomi_begonia",
+   "target_path" : "kernel/xiaomi/begonia",
+   "remote"      : "github",
+   "branch"      : "eleven"
+ },
+ {
+   "repository"  : "PixelExperience-Devices/device_xiaomi_begonia-kernel",
+   "target_path" : "device/xiaomi/begonia-kernel",
+   "remote"      : "github",
+   "branch"      : "eleven"
+ },
+ {
+   "repository"  : "TheMalachite/vendor_xiaomi_begonia",
+   "target_path" : "vendor/xiaomi/begonia",
+   "remote"      : "github",
+   "branch"      : "elle"
+ },
+ {
+   "repository"  : "TheMalachite/vendor_xiaomi_begonia-firmware",
+   "target_path" : "vendor/xiaomi/begonia-firmware",
+   "remote"      : "github",
+   "branch"      : "elle"
+ },
+ {
+   "repository"  : "PixelExperience/device_mediatek_sepolicy",
+   "target_path" : "device/mediatek/sepolicy",
+   "remote"      : "github",
+   "branch"      : "eleven"
+ },
+ {
+   "repository"  : "PixelExperience/vendor_mediatek-opensource",
+   "target_path" : "vendor/mediatek/opensource",
+   "remote"      : "github",
+   "branch"      : "eleven"
+ },
+ {
+   "repository"  : "PixelExperience/vendor_mediatek_ims",
+   "target_path" : "vendor/mediatek/ims",
+   "remote"      : "github",
+   "branch"      : "eleven"
+ },
+ {
+   "repository"  : "PixelExperience/vendor_mediatek_interfaces",
+   "target_path" : "vendor/mediatek/interfaces",
+   "remote"      : "github",
+   "branch"      : "eleven"
+ }
+]
