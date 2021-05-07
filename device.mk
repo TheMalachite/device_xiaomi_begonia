@@ -19,8 +19,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay \
-    $(DEVICE_PATH)/overlay-aosp
+    $(DEVICE_PATH)/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -146,11 +145,7 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder \
     libhwbinder.vendor \
-    libunwindstack.vendor \
-    android.hidl.base@1.0 \
-    android.hidl.base@1.0_system \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0_system
+    libunwindstack.vendor
 
 # IR
 PRODUCT_PACKAGES += \

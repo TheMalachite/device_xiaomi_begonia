@@ -1,4 +1,4 @@
-BOARD_PREBUILT_DTBOIMAGE := $(PRODUCT_OUT)/dtbo-pre.img
+BOARD_PREBUILT_DTBOIMAGE := $(PRODUCT_OUT)/prebuilt_dtbo.img
 BOARD_KERNEL_DTBO_CFG := dtboimg.cfg
 MKDTBOIMG := system/libufdt/utils/src/mkdtboimg.py
 APPEND_CERTS := $(DEVICE_PATH)/dtbo/append_certs.py
