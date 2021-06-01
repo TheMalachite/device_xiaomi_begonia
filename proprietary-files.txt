@@ -901,10 +901,6 @@ vendor/lib64/libfeature_rss.so
 vendor/bin/hw/camerahalserver
 vendor/etc/init/camerahalserver.rc
 
-# Consumerir
-vendor/lib/hw/consumerir.mt6785.so
-vendor/lib64/hw/consumerir.mt6785.so
-
 # Device Feature
 vendor/etc/device_features/begonia.xml
 
