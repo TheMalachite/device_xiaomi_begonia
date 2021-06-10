@@ -264,7 +264,8 @@ PRODUCT_COPY_FILES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH)
+    $(DEVICE_PATH) \
+    packages/apps/Bluetooth
 
 # Text classifier
 PRODUCT_PACKAGES += \
