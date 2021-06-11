@@ -1,0 +1,4 @@
+tface					       u:object_r:tface_service:s0
+extphone                                       u:object_r:radio_service:s0
+qti.ims.ext                                    u:object_r:radio_service:s0
+qti.radio.extphone                             u:object_r:radio_service:s0
