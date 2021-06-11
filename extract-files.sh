@@ -61,6 +61,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        vendor/etc/init/init.wlan_drv.rc)
+            sed -i "s/insmod/#insmod/" "${2}"
+            ;;
         vendor/etc/init_panel_info.sh)
             sed -i "s/system/vendor/" "${2}"
             ;;
