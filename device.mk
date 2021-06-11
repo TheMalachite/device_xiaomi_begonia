@@ -230,6 +230,11 @@ PRODUCT_PACKAGES += \
     fstab.mt6785 \
     ueventd.mt6785.rc
 
+# Radio
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.4 \
+    android.hardware.radio.config@1.2
+
 # Ramdisk For Kernel
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.mt6785:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6785
