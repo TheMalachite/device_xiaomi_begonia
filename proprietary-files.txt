@@ -1671,6 +1671,7 @@ vendor/etc/ecc_list_OP17.xml
 vendor/etc/ecc_list_OP18.xml
 vendor/etc/ecc_list_OP20.xml
 vendor/etc/init/init.cccifsd.rc
+vendor/etc/init/init.cccimdinit.rc
 vendor/etc/init/init.cccirpcd.rc
 vendor/etc/init/gsm0710muxd.rc
 vendor/etc/init/nvram_daemon.rc
