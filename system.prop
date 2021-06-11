@@ -44,6 +44,9 @@ sys.ipo.pwrdncap=2
 # Radio
 persist.radio.sar_sar_sensor=true
 
+# Servicetracker
+sys.vendor.qti.servicetracker.disable=true
+
 # USB
 ro.sys.usb.mtp.whql.enable=0
 ro.sys.usb.storage.type=mtp
