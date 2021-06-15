@@ -15,11 +15,6 @@ on early-init
     write /sys/class/net/ccmni2/queues/rx-0/rps_cpus "0f"
 
 on init
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-
-    mkdir /mnt/cd-rom 0000 system system
-
     # change lk_env permission
     chown root system /proc/lk_env
     chmod 0660 /proc/lk_env
@@ -119,9 +114,6 @@ on fs
     #Audio-add
     chmod 0771 /mnt/vendor/persist/audio
 
-on fs
-   mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
-
 on post-fs
     write /proc/bootprof "INIT:post-fs"
 
@@ -131,9 +123,6 @@ on post-fs
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 100"
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 100"
     write /proc/sys/kernel/sched_stune_task_threshold 0
-
-    # Support legacy paths
-    symlink /sdcard /storage/sdcard0
 
     #change permissions for mediaserver
     chown root media /proc/clkmgr/mipi_test
