@@ -100,7 +100,6 @@ on fs
     wait_for_prop hwservicemanager.ready "true"
     start vendor.boot-hal-1-0
     mount_all /vendor/etc/fstab.mt6785 --early
-    mount_all /vendor/etc/fstab.mt6785 --late
     exec /bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/bootdevice/by-name/userdata
     write /sys/kernel/debug/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END"
@@ -113,6 +112,15 @@ on fs
     mkdir /mnt/vendor/persist/misys 0755 system system
     #Audio-add
     chmod 0771 /mnt/vendor/persist/audio
+
+on late-fs
+    # Wait for hwservicemanager ready since fsck might be triggered in mount_all --late
+    # In such case, init won't responce the property_set from hwservicemanager and then
+    # cause services for bootanim not running.
+    wait_for_prop hwservicemanager.ready true
+
+    # Mount RW partitions which need run fsck
+    mount_all /vendor/etc/fstab.mt6785 --late
 
 on post-fs
     write /proc/bootprof "INIT:post-fs"
