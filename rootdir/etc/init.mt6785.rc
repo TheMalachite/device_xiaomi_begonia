@@ -58,7 +58,6 @@ on charger
     mount ext4 /dev/block/platform/bootdevice/by-name/cache /cache rw wait
     chmod 0660 /dev/spm
     chown system system /dev/spm
-    start spm_script
     chmod 0666 /dev/kmsg
     chmod 0775 /mnt/vendor
     mkdir /mnt/vendor/nvcfg
@@ -87,9 +86,6 @@ on charger
     chown system system /sys/class/leds/white/brightness
     chown system system /sys/class/leds/green/brightness
 
-    start light-hal-2-0
-    start health-hal-2-0
-
     # MI Thermald
     wait /sys/class/power_supply/battery/temp
     start mi_thermald
@@ -98,7 +94,6 @@ on fs
     write /proc/bootprof "INIT:Mount_START"
     write /sys/kernel/debug/tracing/trace_marker "B|1|Mount"
     wait_for_prop hwservicemanager.ready "true"
-    start vendor.boot-hal-1-0
     mount_all /vendor/etc/fstab.mt6785 --early
     exec /bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/bootdevice/by-name/userdata
     write /sys/kernel/debug/tracing/trace_marker "E"
@@ -1111,13 +1106,6 @@ service mnld /vendor/bin/mnld
     group gps inet misc sdcard_rw sdcard_r media_rw system radio wakelock
     socket mnld stream 660 gps system
 
-# GPS Debug Process
-service lbs_dbg /system/bin/lbs_dbg
-    class main
-    user system
-    group gps inet misc sdcard_rw sdcard_r media_rw system radio
-    socket lbs_dbg stream 660 gps system
-
 # Wlan
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -g@android:wpa_wlan0
@@ -1164,14 +1152,6 @@ on property:sys.boot_completed=1
 ## mtk printk uart controller
 on property:persist.vendor.uartconsole.enable=*
     write /proc/mtprintk ${persist.vendor.uartconsole.enable}
-
-# bugreport is triggered by holding down volume down, volume up and power
-service bugreport /bin/dumpstate -d -p -B -z \
-        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-    class late_start
-    disabled
-    oneshot
-    keycodes 114 115 116
 
 # end boot time fs tune
 on property:sys.boot_completed=1
@@ -1248,13 +1228,6 @@ on property:vendor.mtk.md1.status=reset
 on init
     symlink /dev/block/platform/bootdevice /dev/block/bootdevice
 
-# VSIM service (vendor OSI)
-service osi /bin/osi
-    class main
-    user root
-    disabled
-    oneshot
-
 service charger /bin/chargeonlymode
     class charger
     critical
@@ -1272,7 +1245,7 @@ on property:ro.boot.product.hardware.sku=begonia
     start vendor.nfc_hal_service
 
 # MI Thermald
-service mi_thermald /system/vendor/bin/mi_thermald
+service mi_thermald /vendor/bin/mi_thermald
     class main
     user root
     group system
