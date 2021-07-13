@@ -76,6 +76,12 @@ function blob_fixup() {
         vendor/etc/init_panel_info.sh)
             sed -i "s/system/vendor/" "${2}"
             ;;
+        vendor/lib64/hw/audio.primary.mt6785.so)
+            "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v29.so" "${2}"
+            ;;
+        vendor/lib/hw/audio.primary.mt6785.so)
+            "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v29.so" "${2}"
+            ;;
     esac
 }
 

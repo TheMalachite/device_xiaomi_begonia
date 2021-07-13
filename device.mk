@@ -10,10 +10,9 @@ DEVICE_PATH := device/xiaomi/begonia
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # MTK Vendor Repos
-MTK_PLATFORM := mt6785
+$(call inherit-product, vendor/mediatek/opensource/mtk-builds.mk)
 $(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
 $(call inherit-product, vendor/mediatek/ims/mtk-engi.mk)
-$(call inherit-product, device/mediatek/common/target.mk)
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
@@ -76,7 +75,8 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.common@6.0-util \
+    android.hardware.audio.effect@5.0-impl \
     android.hardware.soundtrigger@2.2-impl \
     android.hardware.bluetooth.audio@2.0-impl \
     audio.a2dp.default \
@@ -288,6 +288,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
+
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libmedia_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmedia_helper-v29.so \
+    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-sp/libcompiler_rt.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcompiler_rt.so \
+    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libmedia_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmedia_helper-v29.so \
+    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-sp/libcompiler_rt.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcompiler_rt.so
 
 # WiFi
 PRODUCT_COPY_FILES += \
