@@ -23,6 +23,7 @@ vendor/lib/libaurisysdemo.so
 vendor/lib/libbessound_hd_mtk_vendor.so
 vendor/lib/libblisrc32_vendor.so
 vendor/lib/libcvsd_mtk.so
+vendor/lib/libfpspolicy.so
 vendor/lib/libfvaudio.so
 vendor/lib/libmsbc_mtk.so
 vendor/lib/libspeechparser_vendor.so
@@ -49,6 +50,7 @@ vendor/lib64/libaurisysdemo.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/libblisrc32_vendor.so
 vendor/lib64/libcvsd_mtk.so
+vendor/lib64/libfpspolicy.so
 vendor/lib64/libfvaudio.so
 vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libspeechparser_vendor.so
@@ -198,6 +200,22 @@ vendor/lib64/hw/audio.usb.mt6785.so
 # Audio (Hardware) | From begonia 11 RP1A.200720.011 21.5.25
 vendor/lib/hw/audio.primary.mt6785.so|af9de1c8bceb91ab557904791885509cc3c9d689
 vendor/lib64/hw/audio.primary.mt6785.so|70e00bcc4a86f3bfc42c450eaac7ca571f12619c
+
+# Bluetooth
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-mediatek
+vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-mediatek.so
+vendor/lib/libbluetoothem_mtk.so
+vendor/lib/libbluetooth_mtk.so
+vendor/lib/libbluetooth_mtk_pure.so
+vendor/lib/libbluetooth_relayer.so
+vendor/lib/libbt-vendor.so
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-mediatek.so
+vendor/lib64/libbluetoothem_mtk.so
+vendor/lib64/libbluetooth_mtk.so
+vendor/lib64/libbluetooth_mtk_pure.so
+vendor/lib64/libbluetooth_relayer.so
+vendor/lib64/libbt-vendor.so
 
 # Bluetooth (AptX)
 lib64/libaptXHD_encoder.so
@@ -458,6 +476,7 @@ vendor/lib/libispcameraca.so
 vendor/lib/libjpeg-alpha-oal_vendor.so
 vendor/lib/libjpeg-alpha_vendor.so
 vendor/lib/libmpbase.so
+vendor/lib/libmtk_drvb.so
 vendor/lib/libmtkcam.atmseventmgr.so
 vendor/lib/libmtkcam.eventcallback.so
 vendor/lib/libmtkcam.logicalmodule.so
@@ -799,6 +818,7 @@ vendor/lib64/libmialgoengine.so
 vendor/lib64/libmialgo_sd.so
 vendor/lib64/libmibokeh_mt6785.so
 vendor/lib64/libmpbase.so
+vendor/lib64/libmtk_drvb.so
 vendor/lib64/libmtkcam.atmseventmgr.so
 vendor/lib64/libmtkcam.eventcallback.so
 vendor/lib64/libmtkcam.featurepipe.capture.so
@@ -945,6 +965,10 @@ vendor/lib64/libfeature_fsc.so
 vendor/lib64/libfeature_lmv.so
 vendor/lib64/libfeature_rss.so
 
+# Consumerir
+vendor/lib/hw/consumerir.mt6785.so
+vendor/lib64/hw/consumerir.mt6785.so
+
 # DRM
 vendor/lib/liboemcrypto.so
 vendor/lib/libwvkeybox.so
@@ -1012,16 +1036,22 @@ vendor/etc/csot_fhd_nt36672a_dsi_vdo_lcm_drv_mi.xml
 vendor/etc/tianma_fhd_nt36672a_dsi_vdo_lcm_drv_mi.xml
 
 # Display (Hardware)
+vendor/bin/hw/vendor.mediatek.hardware.dfps@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.gpu@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
+vendor/etc/init/vendor.mediatek.hardware.dfps@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.gpu@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
+vendor/lib/hw/dfps.mt6785.so
 vendor/lib/hw/gralloc.mt6785.so
 vendor/lib/hw/memtrack.mt6785.so
+vendor/lib/hw/vendor.mediatek.hardware.dfps@1.0-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.pq@2.3-impl.so
+vendor/lib64/hw/dfps.mt6785.so
 vendor/lib64/hw/gralloc.mt6785.so
 vendor/lib64/hw/hwcomposer.mt6785.so
 vendor/lib64/hw/memtrack.mt6785.so
+vendor/lib64/hw/vendor.mediatek.hardware.dfps@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.3-impl.so
 
 # Engineering
@@ -1667,15 +1697,33 @@ vendor/etc/nxp/VoIP_mic_spk.bin
 vendor/etc/nxp/VoIP_mic_spk_game.bin
 
 # NVRAM
+vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/atcid
 vendor/bin/atci_service
 vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
+vendor/bin/nvram_daemon
 vendor/etc/init/atcid.rc
 vendor/etc/init/atci_service.rc
 vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/fuelgauged_nvram_init.rc
+vendor/etc/init/nvram_daemon.rc
+vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
+vendor/lib/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
+vendor/lib/libcustom_nvram.so
 vendor/lib/libfgauge_gm30.so
+vendor/lib/libfile_op.so
+vendor/lib/libnvram.so
+vendor/lib/libnvram_daemon_callback.so
+vendor/lib/libnvram_platform.so
+vendor/lib/libnvram_sec.so
+vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
+vendor/lib64/libcustom_nvram.so
+vendor/lib64/libfile_op.so
+vendor/lib64/libnvram.so
+vendor/lib64/libnvram_daemon_callback.so
+vendor/lib64/libnvram_platform.so
+vendor/lib64/libnvram_sec.so
 
 # Power
 vendor/lib/libmmprofile.so
@@ -1692,6 +1740,7 @@ vendor/etc/init/md_monitor.rc
 vendor/bin/hw/mtkfusionrild
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.5-service
 vendor/bin/ccci_fsd
+vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd
 vendor/bin/em_hidl
 vendor/bin/flashlessd
@@ -1714,6 +1763,7 @@ vendor/lib/hw/vendor.mediatek.hardware.mms@1.5-impl.so
 vendor/lib/libc2kutils.so
 vendor/lib/libcapctrl.so
 vendor/lib/libcares_naptr.so
+vendor/lib/libccci_util.so
 vendor/lib/libcarrierconfig.so
 vendor/lib/libcrypto-md.so
 vendor/lib/libcrypto-ss.so
@@ -1729,10 +1779,12 @@ vendor/lib/libmtksysutils.so
 vendor/lib/libssl-md.so
 vendor/lib/libssl-ss.so
 vendor/lib/libstorage_otp.so
+vendor/lib/libsysenv.so
 vendor/lib64/hw/vendor.mediatek.hardware.mms@1.5-impl.so
 vendor/lib64/libc2kutils.so
 vendor/lib64/libcapctrl.so
 vendor/lib64/libcares_naptr.so
+vendor/lib64/libccci_util.so
 vendor/lib64/libcarrierconfig.so
 vendor/lib64/libcrypto-md.so
 vendor/lib64/libcrypto-ss.so
@@ -1758,6 +1810,7 @@ vendor/lib64/libratconfig.so
 vendor/lib64/librilfusion.so
 vendor/lib64/libssl-md.so
 vendor/lib64/libssl-ss.so
+vendor/lib64/libsysenv.so
 vendor/lib64/libvia-ril.so
 
 # Radio (Configs)
@@ -1780,10 +1833,12 @@ vendor/etc/partition_permission.sh
 # Sensors
 vendor/lib/hw/sensors.touch.so
 vendor/lib/libakm.so
+vendor/lib/libhwm.so
 vendor/lib/libssccalapi.so
 vendor/lib64/hw/sensors.mt6785.so
 vendor/lib64/hw/sensors.touch.so
 vendor/lib64/libakm.so
+vendor/lib64/libhwm.so
 vendor/lib64/libksensor.so
 vendor/lib64/libsensor_custom.so
 vendor/lib64/libssccalapi.so
@@ -1804,6 +1859,10 @@ vendor/etc/throttle.sh
 vendor/lib/libthermalalgo.so
 vendor/lib/libmtcloader.so
 vendor/lib64/libmtcloader.so
+
+# Thermal (Hardware)
+vendor/lib/hw/thermal.mt6785.so
+vendor/lib64/hw/thermal.mt6785.so
 
 # Thermal (Xiaomi)
 vendor/bin/mi_thermald
@@ -1877,24 +1936,31 @@ vendor/thh/ta/e5140b3376fa4c63ab18062caab2fb5c.ta
 vendor/thh/ta/e97c270ea5c44c58bcd3384a2fa2539e.ta
 vendor/thh/ta/fc32e4da17d342449b01c992d56d71bf.ta
 
+# USB
+vendor/bin/hw/android.hardware.usb@1.1-service-mediatek
+vendor/etc/init/android.hardware.usb@1.1-service-mediatek.rc
+
 # WiFi
+vendor/bin/hw/android.hardware.wifi@1.0-service-lazy-mediatek
+vendor/bin/hw/hostapd
+vendor/bin/hw/wpa_supplicant
+vendor/bin/hostapd_cli
+vendor/bin/wlan_assistant
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
+vendor/bin/wpa_cli
+vendor/etc/init/android.hardware.wifi@1.0-service-lazy-mediatek.rc
+vendor/etc/init/hostapd.android.rc
 vendor/etc/init/init.wlan_drv.rc
+vendor/etc/init/wlan_assistant.rc
+vendor/lib/libwpa_client.so
 vendor/lib/libwapi.so
+vendor/lib64/libkeystore-engine-wifi-hidl.so
+vendor/lib64/libkeystore-wifi-hidl.so
+vendor/lib64/libwpa_client.so
 vendor/lib64/libwapi.so
-
-# WiFi | From begonia 11 RP1A.200720.011 21.5.25
-vendor/bin/hw/wpa_supplicant|b3695c96ff1f216fe170342970a29ce30aec9f26
-vendor/bin/hw/hostapd|006da6d6a5b87eb09b77d9671609a27b68dc9a08
-vendor/bin/stp_dump3|73ff60240688d76fc005a59716db1bdcdf63627f
-vendor/bin/wlan_assistant|79b03b7525d0cd46f1235787d532acfc628951f4
-vendor/etc/init/android.hardware.wifi.supplicant-service.rc|72d2b6a5e0f74bb1b8bceb5d11935b15c09814cb
-vendor/etc/init/hostapd.android.rc|a11c6ea552094117e9c5a65ffafa2820a949f638
-vendor/etc/init/wlan_assistant.rc|32ed0c40b58acc747c83bf467dde7f72634e9732
-vendor/lib/libwpa_client.so|749c548e3e8098d5a0446b46d91021badd2a4c22
-vendor/lib64/libwpa_client.so|63ced1886a6b7858aec6b6466c3b0c8b6d533c81
-vendor/lib64/libwifi-hal.so|e2f6ff7a054982880b9902cae684bcf0dad509fb
+vendor/lib64/libwifi-hal.so
+vendor/lib64/libwifitest.so
 
 # Xiaomi
 vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service

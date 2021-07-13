@@ -61,6 +61,15 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        vendor/bin/hw/android.hardware.wifi@1.0-service-lazy-mediatek)
+            "${PATCHELF}" --add-needed "libcompiler_rt.so" "${2}"
+            ;;
+        vendor/bin/hw/hostapd)
+            "${PATCHELF}" --add-needed "libcompiler_rt.so" "${2}"
+            ;;
+        vendor/bin/hw/wpa_supplicant)
+            "${PATCHELF}" --add-needed "libcompiler_rt.so" "${2}"
+            ;;
         vendor/etc/init/init.wlan_drv.rc)
             sed -i "s/insmod/#insmod/" "${2}"
             ;;

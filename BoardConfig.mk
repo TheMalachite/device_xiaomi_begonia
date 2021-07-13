@@ -100,7 +100,6 @@ BOARD_USES_METADATA_PARTITION := true
 # MTK Rules
 TARGET_PROVIDES_MTK_PROPRIETARY := true
 TARGET_PROVIDES_MEDIATEK_IMS_STACK := true
-TARGET_PROVIDES_MTK_OSS_CONNECTIVITY := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -149,13 +148,6 @@ include device/mediatek/sepolicy_vndr/SEPolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-
-# VNDK
-PRODUCT_VENDOR_MOVE_ENABLED := true
-
-# Wi-Fi
-WIFI_HIDL_FEATURE_AWARE := true
-WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
 # Inherit from the proprietary version
 include vendor/xiaomi/begonia/BoardConfigVendor.mk
