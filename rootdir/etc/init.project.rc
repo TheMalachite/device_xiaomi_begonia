@@ -1,11 +1,6 @@
 # MTK project .rc configure
 
-import init.mi_thermald.rc
-import init.mishow.ctl.rc
-
-on init
-    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
-    mkdir /storage/usbotg 0700 root root
+import /vendor/etc/init/hw/init.mi_thermald.rc
 
 on post-fs-data
     mkdir /data/vendor/nfc 0770 nfc nfc
@@ -22,7 +17,7 @@ on post-fs-data
     chmod 0777 /sys/class/power_supply/battery/input_suspend
     chown root root /sys/class/power_supply/battery/input_suspend
 
-#Camera
+    #Camera
     chmod 0660 /dev/MAINAF
     chown system camera /dev/MAINAF
 
@@ -44,20 +39,20 @@ on post-fs-data
     chmod 0660 /dev/BU64745GWZAF
     chown system camera /dev/BU64745GWZAF
 
-#NFC
+    #NFC
     chmod 0660 /dev/nq-nci
     chown nfc nfc /dev/nq-nci
     chmod 0660 /dev/p73
     chown nfc nfc /dev/p73
 
-#SMB
+    #SMB
     chown system system /proc/smb/ScreenComm
     chmod 0660 /proc/smb/ScreenComm
 
     chmod 0660 /dev/spm
     chown system system /dev/spm
 
-#Audio TFA 98xx
+    #Audio TFA 98xx
     chown system system /dev/tfa_reg
     chown system system /dev/tfa_rw
     chown system system /dev/tfa_rpc
@@ -70,43 +65,16 @@ on post-fs-data
     chmod 0660 /dev/tfa_profile
 
 on init
-    # Refer to http://source.android.com/devices/tech/storage/index.html
-    # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
-    #           Context.getExternalFilesDirs(), Context.getExternalCacheDirs(), and Context.getObbDirs().
-    #           External storage devices surfaced through these APIs must be a semi-permanent part of the device (such as an SD card slot in a battery compartment).
-    #           Developers expect data stored in these locations to be available over long periods of time."
-    # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
-    #
-    # export SECONDARY_STORAGE /storage/sdcard1
+    chown system system /proc/tp_selftest
 
-chown system system /proc/tp_selftest
+    #torch_light
+    chown system system /sys/devices/platform/flashlights_mt6360/leds/torch-light0/brightness
+    chown system system /sys/devices/platform/flashlights_mt6360/leds/torch-light1/brightness
 
-#torch_light
-chown system system /sys/devices/platform/flashlights_mt6360/leds/torch-light0/brightness
-chown system system /sys/devices/platform/flashlights_mt6360/leds/torch-light1/brightness
-
-service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
-    class late_start
-    disabled
-
-service panel-info-sh /system/vendor/bin/sh /vendor/etc/init_panel_info.sh
+service panel-info-sh /vendor/bin/sh /vendor/etc/init_panel_info.sh
     class core
     user root
     oneshot
-
-service displayfeature /system/bin/displayfeature
-    class late_start
-    user root
-    group root
-
-on property:init.svc.surfaceflinger=stopped
-    stop displayfeature
-
-on property:init.svc.surfaceflinger=running
-    start displayfeature
-
-on property:init.svc.surfaceflinger=restarting
-    stop displayfeature
 
 #spkcal cit
 on property:vendor.audio.cit.spkcal.copy=true
