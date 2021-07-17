@@ -770,17 +770,6 @@ vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/libOpenCL.so
 
-# Kernel-Modules
-vendor/lib/modules/bt_drv.ko:vendor/lib/modules_prebuilt/bt_drv.ko
-vendor/lib/modules/fmradio_drv.ko:vendor/lib/modules_prebuilt/fmradio_drv.ko
-vendor/lib/modules/fpsgo.ko:vendor/lib/modules_prebuilt/fpsgo.ko
-vendor/lib/modules/gps_drv.ko:vendor/lib/modules_prebuilt/gps_drv.ko
-vendor/lib/modules/met.ko:vendor/lib/modules_prebuilt/met.ko
-vendor/lib/modules/udc_lib.ko:vendor/lib/modules_prebuilt/udc_lib.ko
-vendor/lib/modules/wlan_drv_gen4m.ko:vendor/lib/modules_prebuilt/wlan_drv_gen4m.ko
-vendor/lib/modules/wmt_chrdev_wifi.ko:vendor/lib/modules_prebuilt/wmt_chrdev_wifi.ko
-vendor/lib/modules/wmt_drv.ko:vendor/lib/modules_prebuilt/wmt_drv.ko
-
 # Keymaster
 vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
 vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
@@ -1351,12 +1340,9 @@ vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/fuelgauged_nvram_init.rc
 vendor/etc/init/gsm0710muxd.rc
 vendor/etc/init/init.bip.rc
-vendor/etc/init/init.bt_drv.rc
 vendor/etc/init/init.cccifsd.rc
 vendor/etc/init/init.cccimdinit.rc
 vendor/etc/init/init.cccirpcd.rc
-vendor/etc/init/init.fmradio_drv.rc
-vendor/etc/init/init.gps_drv.rc
 vendor/etc/init/init.md_apps.rc
 vendor/etc/init/init.volte_imcb.rc
 vendor/etc/init/init.volte_imsm_93.rc
@@ -1366,7 +1352,6 @@ vendor/etc/init/init.volte_ua.rc
 vendor/etc/init/init.vtservice_hidl.rc
 vendor/etc/init/init.wfca.rc
 vendor/etc/init/init.wlan_drv.rc
-vendor/etc/init/init.wmt_drv.rc
 vendor/etc/init/init.wod.rc
 vendor/etc/init/init.xcap.rc
 vendor/etc/init/init_connectivity.rc

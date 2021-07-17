@@ -56,8 +56,8 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-    *.rc)
-        sed -i "s/vendor\/lib\/modules\//vendor\/lib\/modules_prebuilt\//g" ${2}
+    vendor/etc/init/init.wlan_drv.rc)
+        sed -i "s/insmod/#insmod/g" ${2}
         ;;
     vendor/bin/hw/android.hardware.wifi@1.0-service-lazy-mediatek)
         patchelf --replace-needed libwifi-hal.so libwifi-hal-mtk.so ${2}
