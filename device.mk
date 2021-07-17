@@ -12,7 +12,8 @@ $(call inherit-product, vendor/mediatek/opensource/mtk-oss.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    packages/apps/Bluetooth
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -81,13 +82,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service
-
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.base@1.0_system \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0_system
 
 # Init
 PRODUCT_PACKAGES += \
