@@ -124,8 +124,6 @@ vendor/lib/libaudiofmtconv.so
 vendor/lib/libaudioloudc.so
 vendor/lib/libaudiosmartpamtk.so
 vendor/lib/libaudiotoolkit_vendor.so
-vendor/lib/libtinycompress.so
-vendor/lib/soundfx/libaudiopreprocessing.so
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
 vendor/lib64/libaudiocompensationfilterc.so
@@ -137,42 +135,27 @@ vendor/lib64/libaudiofmtconv.so
 vendor/lib64/libaudioloudc.so
 vendor/lib64/libaudiosmartpamtk.so
 vendor/lib64/libaudiotoolkit_vendor.so
-vendor/lib64/libtinycompress.so
-vendor/lib64/soundfx/libaudiopreprocessing.so
 
 # Audio-Hardware
-vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.mt6785.so
-vendor/lib/hw/audio.r_submix.default.so
 vendor/lib/hw/audio.r_submix.mt6785.so
-vendor/lib/hw/audio.usb.default.so
 vendor/lib/hw/audio.usb.mt6785.so
-vendor/lib/hw/audio_policy.stub.so
-vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.primary.mt6785.so
-vendor/lib64/hw/audio.r_submix.default.so
 vendor/lib64/hw/audio.r_submix.mt6785.so
-vendor/lib64/hw/audio.usb.default.so
 vendor/lib64/hw/audio.usb.mt6785.so
-vendor/lib64/hw/audio_policy.stub.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-mediatek
-vendor/etc/audio_policy_configuration_bluetooth_legacy_hal.xml
 vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-mediatek.so
-vendor/lib/hw/audio.bluetooth.default.so
 vendor/lib/libbluetoothem_mtk.so
-vendor/lib/libbluetooth_audio_session.so
 vendor/lib/libbluetooth_hw_test.so
 vendor/lib/libbluetooth_mtk.so
 vendor/lib/libbluetooth_mtk_pure.so
 vendor/lib/libbluetooth_relayer.so
 vendor/lib/libbt-vendor.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-mediatek.so
-vendor/lib64/hw/audio.bluetooth.default.so
 vendor/lib64/libbluetoothem_mtk.so
-vendor/lib64/libbluetooth_audio_session.so
 vendor/lib64/libbluetooth_hw_test.so
 vendor/lib64/libbluetooth_mtk.so
 vendor/lib64/libbluetooth_mtk_pure.so
@@ -703,10 +686,8 @@ vendor/lib64/libwvhidl.so|a2c94646a2c4861222a1e8e9a802c68824e6f0f4
 vendor/lib64/mediadrm/libwvdrmengine.so|57c12b5dcfa7098718e3a7b39b2f6eae33b68dcd
 
 # Display-Hardware
-vendor/lib/hw/gralloc.default.so
 vendor/lib/hw/gralloc.mt6785.so
 vendor/lib/hw/memtrack.mt6785.so
-vendor/lib64/hw/gralloc.default.so
 vendor/lib64/hw/gralloc.mt6785.so
 vendor/lib64/hw/hwcomposer.mt6785.so
 vendor/lib64/hw/memtrack.mt6785.so
@@ -773,12 +754,8 @@ vendor/lib/libgeofence.so
 vendor/lib64/hw/android.hardware.gnss@2.0-impl-mediatek.so
 
 # Gatekeeper
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service
-vendor/etc/init/android.hardware.gatekeeper@1.0-service.rc
-vendor/lib/hw/android.hardware.gatekeeper@1.0-impl.so
 vendor/lib/hw/gatekeeper.mt6785.so
 vendor/lib/hw/libSoftGatekeeper.so
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so
 vendor/lib64/hw/gatekeeper.mt6785.so
 vendor/lib64/hw/libSoftGatekeeper.so
 
@@ -805,27 +782,18 @@ vendor/lib/modules/wmt_chrdev_wifi.ko:vendor/lib/modules_prebuilt/wmt_chrdev_wif
 vendor/lib/modules/wmt_drv.ko:vendor/lib/modules_prebuilt/wmt_drv.ko
 
 # Keymaster
-vendor/bin/hw/android.hardware.keymaster@3.0-service
 vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
-vendor/etc/init/android.hardware.keymaster@3.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
-vendor/lib/hw/android.hardware.keymaster@3.0-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
-vendor/lib/libkeymaster3device.so
 vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.1.so
-vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
-vendor/lib64/libkeymaster3device.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 
 # Keystore
 vendor/lib/hw/keystore.mt6785.so
-vendor/lib/libkeystore-wifi-hidl.so
 vendor/lib64/hw/keystore.mt6785.so
-vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libkeystore-wifi-hidl.so
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.mt6785.so
@@ -886,8 +854,6 @@ vendor/etc/init/vendor.mediatek.hardware.mms@1.5-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mtkcodecservice@1.1-service.rc
 vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
-vendor/etc/media_codecs_mediatek_audio.xml
-vendor/etc/media_codecs_mediatek_video.xml
 vendor/lib/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.camera.postproc@1.0-impl.so
@@ -1168,9 +1134,7 @@ vendor/lib64/libcmdl_ndk.mtk.so|44debcccf39935d2750422f97c6b70618bd10dff
 vendor/etc/powercontable.xml
 vendor/etc/powerscntbl.xml
 vendor/etc/power_whitelist_cfg.xml
-vendor/lib/hw/power.default.so
 vendor/lib/hw/power.mt6785.so
-vendor/lib64/hw/power.default.so
 vendor/lib64/hw/power.mt6785.so
 
 # Radio
@@ -1218,10 +1182,6 @@ vendor/lib/libthermalalgo.so
 vendor/lib/hw/thermal.mt6785.so
 vendor/lib64/hw/thermal.mt6785.so
 
-# Vibrator
-vendor/lib/hw/vibrator.default.so
-vendor/lib64/hw/vibrator.default.so
-
 # WiFi
 vendor/bin/hostapd_cli
 vendor/bin/hw/hostapd
@@ -1229,7 +1189,7 @@ vendor/bin/hw/wpa_supplicant
 vendor/bin/wpa_cli
 vendor/etc/init/hostapd.android.rc
 vendor/lib/libwpa_client.so
-vendor/lib64/libwifi-hal.so
+vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
 vendor/lib64/libwpa_client.so
 
 # Xiaomi
@@ -1920,7 +1880,6 @@ vendor/lib/libnvram.so
 vendor/lib/libnvram_daemon_callback.so
 vendor/lib/libnvram_platform.so
 vendor/lib/libnvram_sec.so
-vendor/lib/libopus.so
 vendor/lib/libperfctl_vendor.so
 vendor/lib/libpixelflinger.so
 vendor/lib/libpq_cust_base.so
@@ -1950,7 +1909,6 @@ vendor/lib/libverno.so
 vendor/lib/libviagpsrpc.so
 vendor/lib/libvolte_core_shr.so
 vendor/lib/libvolte_xdmc_shr.so
-vendor/lib/libvorbisidec.so
 vendor/lib/libvowp23_sid_testing_alexa.vendor.so
 vendor/lib/libvowp23_sid_training_alexa.vendor.so
 vendor/lib/libvowp25testing_alexa.vendor.so
@@ -1961,7 +1919,6 @@ vendor/lib/libvp8enc_sa.ca7.so
 vendor/lib/libvp9dec_sa.ca7.so
 vendor/lib/libvpu.so
 vendor/lib/libvpud_vcodec.so
-vendor/lib/libvpx.so
 vendor/lib/libvt_custom.so
 vendor/lib/libwapi.so
 vendor/lib/libwo.so
