@@ -56,6 +56,9 @@ BUILD_BROKEN_DUP_RULES := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+# Display
+TARGET_SCREEN_DENSITY := 440
+
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_BASE := 0x40078000
@@ -132,7 +135,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 TARGET_BOARD_PLATFORM := mt6785
 
 # Properties
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Sepolicy
 include device/mediatek/sepolicy/sepolicy.mk
